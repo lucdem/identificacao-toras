@@ -3,7 +3,9 @@
 # Identificação - Métodos de Visão Computacional Clássica
 
 	A abordagem por métodos clássicos utilizada se baseia na transformada de Hough para círculos e distância de Mahalanobis. Numa primeira etapa é aplicado um blur intenso na imagem sendo então aplicado o algoritmo de detecção de bordas de Canny seguido da transformada de Hough.
+	
 	Em seguida seleciona-se os dois círculos com maior valor de acumulador no espaço de Hough, calculado o valor médio de seus pixels, sendo então calculada a distância de Mahalanobis de todos os pixels da imagem em relação a este valor médio.
+	
 	Feito isso, a transformada de Hough é utilizada novamente, desta vez com um blur menos intenso. Os círculos encontrados nesta etapa são avaliados com base nas distâncias de Mahalanobis, aqueles que possuírem muitos pixels com distância acima de um certo limiar são considerados falsos positivos e eliminados do resultado final.
 
 # Identificação - Rede Neural
